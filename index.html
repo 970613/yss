@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+<!--双向绑定v-model-->
+<div id="app">
+    <p>双向绑定:{{message}}</p>
+    <input v-model="message">
+</div>
+
+
+<!--追加 v-for-->
+<!--v-for后面的值要有in属性，in后面的值是一个集合类型的数据,
+集合数据有多少，就会有多少个li生成，
+in前面的是集合中的每yi个元素，fruit代表单个元素-->
+<div id="app1">
+    <ul>
+        <li v-for="(fruit,index) in fruits" v-on:click="e(index)">{{fruit}}索引:{{index}}</li>
+    </ul>
+</div>
+<div id="app2">
+    <ul>
+        <li v-for="f in fruit">
+           <a v-bind:href="f.url">
+               {{f.name}}
+           </a>
+        </li>
+    </ul>
+</div>
+   
+   
+   
+<!--   传递参数-->
+   <div id="app3">
+       <button v-on:click="e(123)">按钮</button>
+   </div>
+    <!-- JavaScript -->
+    <script src="vue/vue.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
